@@ -41,9 +41,11 @@ const Page = () => {
             simple to analyze and manage your data.
           </Text>
 
+          <div style={{ display: "flex", alignItems: "center", paddingLeft: "20px" }}>
           <Button size="sm" color="blue" backgroundColor="white"  h="10" _hover={{ backgroundColor: "#cce0ff" }}>
             Discover more
           </Button>
+          </div>
         </div>
         </div>
       </Center>
@@ -79,24 +81,67 @@ const Page = () => {
 
 
       <Text fontWeight = "700" textAlign = "center" textStyle = "xl">Explore</Text>
-        
+  
 
-      <Flex justify="center" align="center" mt="8" mb="8">
-        <Box display="flex" borderRadius="full" width="auto" border="1px solid" borderColor="gray.300">
-          <Box backgroundColor = "blue.600" color="white" p="4" textAlign="center" borderTopLeftRadius="full" borderBottomLeftRadius="full" width="120px" zIndex="1">
-          <Text fontSize="sm" fontWeight="bold">
-            What We Do
-          </Text>
-        </Box>
 
-        {/* "Who We Are" Section with White Background */}
-        <Box backgroundColor="white" color="gray.700" p="4" textAlign="center" borderTopRightRadius="full" borderBottomRightRadius="full" width="120px" borderLeft="1px solid" borderColor="gray.300" marginLeft="-10px">
-          <Text fontSize="sm" fontWeight="bold">
-            Who We Are
-          </Text>
-        </Box>
-        </Box>
-      </Flex>
+
+
+
+
+
+
+
+
+
+
+
+<div style={{ position: "relative", width: "30%", maxWidth: "1200px", margin: "auto" }}>
+  {/* Second Image (Base Image) */}
+  <div style={{ position: "relative", width: "90%" }}>
+    <Image src="/images/rectangle1.png" alt="Rectangle 1" width="100%" objectFit="contain"/>
+    {/* Text for 'Who we are' */}
+    <div
+      style={{ position: "absolute", top: "45%", right: "18%", transform: "translateY(-50%)", color: "black", fontWeight: "bold", fontSize: "15px", }}>
+      <Text>Who we are</Text>
+    </div>
+  </div>
+
+  {/* First Image (Overlay Image) */}
+  <div
+    style={{
+      position: "absolute",
+      top: "25%", // Adjust this to place the first image within the base image
+      left: "10%", // Adjust this to position the overlay image
+      width: "50%", // Adjust the size of the overlay image
+    }}>
+    <Image
+      src="/images/rectangle2.png"
+      alt="Rectangle 2"
+      width="67%"
+      objectFit="contain"
+    />
+    {/* Text for 'What we do' */}
+    <div
+      style={{
+        position: "absolute",
+        top: "45%",
+        left: "15%",
+        transform: "translateY(-50%)",
+        color: "white",
+        fontWeight: "bold",
+        fontSize: "13px",
+      }}
+    >
+      <Text>What we do</Text>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
 
 
 
