@@ -2,24 +2,31 @@
 
 import { Heading, Stack, Button, Center, Box, Text, Icon, Flex, Image } from "@chakra-ui/react"
 import { FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
-
+import { SetStateAction, useState } from 'react';
 
 const Page = () => {
+
+    const [showFirstSet, setShowFirstSet] = useState(true);
+  
+    const toggleImages = () => {
+      setShowFirstSet(!showFirstSet);
+    };
+    
   return (
     <>
       {/* Container to hold both Center components with consistent width */}
       <div style={{ width: "92%", maxWidth: "1200px", margin: "0 auto" }}>
       {/* First Center - Navigation */}
-      <Center mt="8" width="100%" maxWidth="1200px">
+        <Center mt="8" width="100%" maxWidth="1200px">
         <Stack justify="space-between" align="center" direction="row" width="100%" height="35px" padding="0 10px">
           <Image src="/images/logo.png" alt="Logo" width="220px" height="36px" />
           <Flex justify="space-evenly" align="center" width="100%" maxWidth="800px" px="4">
-            <Heading size="sm">Home</Heading>
-            <Heading size="sm">About us</Heading>
-            <Heading size="sm">Explore</Heading>
-            <Heading size="sm">Product</Heading>
-            <Heading size="sm">Premium</Heading>
-            <Heading size="sm">Question for the day</Heading>
+            <Heading size="sm" fontFamily = "Inter" fontWeight = "600" fontSize = "20px" lineHeight = "20%" letterSpacing = "0%">Home</Heading>
+            <Heading size="sm" fontFamily = "Inter" fontWeight = "600" fontSize = "20px" lineHeight = "20%" letterSpacing = "0%">About us</Heading>
+            <Heading size="sm" fontFamily = "Inter" fontWeight = "600" fontSize = "20px" lineHeight = "20%" letterSpacing = "0%">Explore</Heading>
+            <Heading size="sm" fontFamily = "Inter" fontWeight = "600" fontSize = "20px" lineHeight = "20%" letterSpacing = "0%">Product</Heading>
+            <Heading size="sm" fontFamily = "Inter" fontWeight = "600" fontSize = "20px" lineHeight = "20%" letterSpacing = "0%">Premium</Heading>
+            <Heading size="sm" fontFamily = "Inter" fontWeight = "600" fontSize = "20px" lineHeight = "20%" letterSpacing = "0%">Question for the day</Heading>
           </Flex>
           <Image src="/images/sign.png" alt="Sign" width="66px" height="34px" borderRadius="5px"/>
         </Stack>
@@ -90,53 +97,87 @@ const Page = () => {
 
 
 
-      <div style={{ position: "relative", width: "45%", maxWidth: "1200px", margin: "auto" }}>
-      {/* Second Image (Base Image) */}
-      <div style={{ position: "relative", width: "90%" }}>
-        <Image src="/images/rectangle1.png" alt="Rectangle 1" width="100%" objectFit="contain"/>
-        {/* Text for 'Who we are' */}
-          <div
-            style={{ position: "absolute", top: "45%", right: "18%", transform: "translateY(-50%)", color: "black", fontWeight: "bold", fontSize: "15px", }}>
-          <Text>Who we are</Text>
-          </div>
-      </div>
 
-        {/* First Image (Overlay Image) */}
-        <div
-          style={{
-            position: "absolute",
-            top: "25%", // Adjust this to place the first image within the base image
-            left: "10%", // Adjust this to position the overlay image
-            width: "50%", // Adjust the size of the overlay image
-            }}>
-          <Image src="/images/rectangle2.png" alt="Rectangle 2" width="67%" objectFit="contain" />
+      <div>
+      <div style={{ position: "relative", width: "35%", maxWidth: "1200px", margin: "auto" }}>
+        {/* Second Image (Base Image) */}
+        <div style={{ position: "relative", width: "90%" }}>
+          <img src="/images/rectangle1.png" alt="Rectangle 1" 
+          style={{ width: "100%", objectFit: "contain"}}/>
+          {/* Text for 'Who we are' */}
+          <div style={{ position: "absolute", top: "45%", right: "18%", transform: "translateY(-50%)", color: "black", fontWeight: "bold", fontSize: "15px", padding: showFirstSet ? "0" : "5px", borderRadius: "4px"}}>
+            Who we are
+          </div>
+        </div>
+        
+        {/* First Image (Overlay Image) - Clickable */}
+        <div 
+          style={{ position: "absolute", top: "25%", left: "10%", width: "50%", cursor: "pointer" }}
+          onClick={toggleImages}
+        >
+          <img src="/images/rectangle2.png" alt="Rectangle 2" 
+            style={{ width: "67%", objectFit: "contain",  }}/>
           {/* Text for 'What we do' */}
-          <div
-            style={{ position: "absolute", top: "45%", left: "15%", transform: "translateY(-50%)", color: "white", fontWeight: "bold", fontSize: "13px",}} >
-              <Text>What we do</Text>
+          <div style={{position: "absolute", top: "45%", left: "15%", transform: "translateY(-50%)", color: "white", fontWeight: "bold", fontSize: "13px"}}>
+            What we do
           </div>
         </div>
-        </div>
-
-
-
-
-      <Text fontWeight = "700" textAlign = "center" textStyle = "xl" fontFamily = "Inter" fontSize = "40px" lineHeight = "44px" letterSpacing = "0%" mb = "5">We are good at what we do</Text>
-      <Text textAlign = "center" textStyle = "xs" fontWeight = "500" fontFamily = "Inter" fontSize = "20px" lineHeight = "41px" letterSpacing = "0%" mb = "6">At The Data Folks, we understand the importance of being prepared for technical interviews. That's why we've <br />created this landing page to help you hone your SQL skills and feel confident when it comes to demonstrating your <br />expertise during your interview.</Text>
-
-  
-
-      <Flex justify="center" align="center" gap="4" mt="4" mb = "10">
-      {/* First Image */}
-      <Box width="45%">
-        <Image src="/images/practical.png" alt="Image" width="630px" height = "443px" top = "400px" objectFit="contain" />
-      </Box>
-      {/* Second Image */}
-      <Box width="45%">
-        <Image src="/images/tutorials.png" alt="Image" width="630px" height = "443px" top = "400px" left = "650px" objectFit="contain" />
-      </Box>
-      </Flex>
-
+      </div>
+    
+      <Text style={{ 
+        fontWeight: "700", 
+        textAlign: "center", fontSize: "40px", lineHeight: "44px", marginBottom: "20px", fontFamily: "Inter", letterSpacing: "0%"}}>
+        We are good at what we do
+      </Text>
+      
+      <Text style={{ textAlign: "center", fontWeight: "500", fontSize: "20px", lineHeight: "41px", marginBottom: "24px", fontFamily: "Inter", letterSpacing: "0%" }}>
+        At The Data Folks, we understand the importance of being prepared for technical interviews. That's why we've <br />
+        created this landing page to help you hone your SQL skills and feel confident when it comes to demonstrating your <br /> 
+        expertise during your interview.
+      </Text>
+      
+      <div style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: "16px", marginTop: "16px", marginBottom: "40px"}}>
+        {showFirstSet ? (
+          <>
+            {/* First set of images */}
+            <div style={{ width: "45%" }}>
+              <img 
+                src="/images/practical.png" 
+                alt="Practical" 
+                style={{ width: "100%", height: "auto", objectFit: "contain" }}
+              />
+              
+            </div>
+            <div style={{ width: "45%" }}>
+              <img 
+                src="/images/tutorials.png" 
+                alt="Tutorials" 
+                style={{ width: "100%", height: "auto", objectFit: "contain" }}
+              />
+              
+            </div>
+          </>
+        ) : (
+          <>
+            {/* Second set of images */}
+            <div style={{ width: "45%" }}>
+              <img 
+                src="/images/frame6.png" 
+                alt="Frame 6" 
+                style={{ width: "100%", height: "auto", objectFit: "contain" }}
+              />
+            </div>
+            <div style={{ width: "45%" }}>
+              <img 
+                src="/images/frame7.png" 
+                alt="Frame 7" 
+                style={{ width: "100%", height: "auto", objectFit: "contain" }}
+              />
+            </div>
+          </>
+        )}
+      </div>
+    </div>
 
       
 
@@ -154,7 +195,7 @@ const Page = () => {
 
       <Stack mb = "10" justify="center">
       {/* Wrapper with relative positioning to allow text on top */}
-      <Flex justify="right" width="90%" position="relative" bg="lightgray" p="6" borderRadius="10px" ml = "80px" mx = "auto">
+      <Flex justify="right" width="90%" position="relative" bg="#F6F1F1" p="6" borderRadius="10px" ml = "80px" mx = "auto">
         <Image src="/images/boy.png" alt="Image" width="400px" height = "451px" top = "3070px" left = "80px" borderRadius = "10px" objectFit="contain"/>
     
         {/* Text on top of the image*/}
@@ -198,9 +239,8 @@ const Page = () => {
           </Stack>
           </Stack>
       </Box>
-      
     </>
-  )
+  );
 }
 
-export default Page
+export default Page;
