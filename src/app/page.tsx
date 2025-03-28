@@ -2,7 +2,7 @@
 
 import { Heading, Stack, Button, Center, Box, Text, Icon, Flex, Image } from "@chakra-ui/react"
 import { FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
-import { SetStateAction, useState } from 'react';
+import { useState } from 'react';
 
 const Page = () => {
 
@@ -45,7 +45,7 @@ const Page = () => {
             easy-to-use SQL platform. 
           </Text>
           <Text fontWeight="500" textStyle="md" mb="4" mt="4" pl="6" fontFamily="Inter" fontSize="20px" lineHeight="32px" letterSpacing="0%"> 
-            Whether you're a beginner or a seasoned pro, our platform makes it <br /> 
+            Whether you&apos;re a beginner or a seasoned pro, our platform makes it <br /> 
             simple to analyze and manage your data. 
           </Text>
           <div style={{ display: "flex", alignItems: "center", paddingLeft: "20px" }}>
@@ -102,7 +102,7 @@ const Page = () => {
       <div style={{ position: "relative", width: "35%", maxWidth: "1200px", margin: "auto" }}>
         {/* Second Image (Base Image) */}
         <div style={{ position: "relative", width: "90%" }}>
-          <img src="/images/rectangle1.png" alt="Rectangle 1" 
+          <Image src="/images/rectangle1.png" alt="Rectangle 1" 
           style={{ width: "100%", objectFit: "contain"}}/>
           {/* Text for 'Who we are' */}
           <div style={{ position: "absolute", top: "45%", right: "18%", transform: "translateY(-50%)", color: "black", fontWeight: "bold", fontSize: "15px", padding: showFirstSet ? "0" : "5px", borderRadius: "4px"}}>
@@ -115,7 +115,7 @@ const Page = () => {
           style={{ position: "absolute", top: "25%", left: "10%", width: "50%", cursor: "pointer" }}
           onClick={toggleImages}
         >
-          <img src="/images/rectangle2.png" alt="Rectangle 2" 
+          <Image src="/images/rectangle2.png" alt="Rectangle 2" 
             style={{ width: "67%", objectFit: "contain",  }}/>
           {/* Text for 'What we do' */}
           <div style={{position: "absolute", top: "45%", left: "15%", transform: "translateY(-50%)", color: "white", fontWeight: "bold", fontSize: "13px"}}>
@@ -131,7 +131,7 @@ const Page = () => {
       </Text>
       
       <Text style={{ textAlign: "center", fontWeight: "500", fontSize: "20px", lineHeight: "41px", marginBottom: "24px", fontFamily: "Inter", letterSpacing: "0%" }}>
-        At The Data Folks, we understand the importance of being prepared for technical interviews. That's why we've <br />
+        At The Data Folks, we understand the importance of being prepared for technical interviews. That&apos;s why we&apos;ve <br />
         created this landing page to help you hone your SQL skills and feel confident when it comes to demonstrating your <br /> 
         expertise during your interview.
       </Text>
@@ -141,7 +141,7 @@ const Page = () => {
           <>
             {/* First set of images */}
             <div style={{ width: "45%" }}>
-              <img 
+              <Image 
                 src="/images/practical.png" 
                 alt="Practical" 
                 style={{ width: "100%", height: "auto", objectFit: "contain" }}
@@ -149,7 +149,7 @@ const Page = () => {
               
             </div>
             <div style={{ width: "45%" }}>
-              <img 
+              <Image 
                 src="/images/tutorials.png" 
                 alt="Tutorials" 
                 style={{ width: "100%", height: "auto", objectFit: "contain" }}
@@ -161,14 +161,14 @@ const Page = () => {
           <>
             {/* Second set of images */}
             <div style={{ width: "45%" }}>
-              <img 
+              <Image
                 src="/images/frame6.png" 
                 alt="Frame 6" 
                 style={{ width: "100%", height: "auto", objectFit: "contain" }}
               />
             </div>
             <div style={{ width: "45%" }}>
-              <img 
+              <Image 
                 src="/images/frame7.png" 
                 alt="Frame 7" 
                 style={{ width: "100%", height: "auto", objectFit: "contain" }}
